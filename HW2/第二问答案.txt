@@ -1,0 +1,21 @@
+int countView(View v)
+{
+    int count = v.getChildCount();
+    int tmp;
+    if(count != 0){
+        for(int i = 0; i < count; i++){
+            tmp += countView(v.getChildAt(i));
+        }
+        count += tmp;
+    }
+    return count;
+}
+
+int main()
+{
+    int count;
+    View rootView;
+    бнбн
+    count = countView(rootView);
+}
+        
