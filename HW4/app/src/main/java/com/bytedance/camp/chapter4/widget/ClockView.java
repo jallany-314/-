@@ -144,7 +144,7 @@ public class ClockView extends View {
          * 注4：Android视图坐标系的0度方向是从圆心指向表盘3点方向，指向表盘的0点时是-90度或270度方向，要注意角度的转换
          */
         needlePaint.setStrokeWidth(HOUR_NEEDLE_WIDTH);
-        float hourDegree = (((float)hour + (float)minute / 60) / 24) * 360 - 90;
+        float hourDegree = ((((float)hour + (float)minute / 60) % 12) / 12) * 360 - 90;
         float endX = (float) (centerX + radius * HOUR_NEEDLE_LENGTH_RATIO * Math.cos(Math.toRadians(hourDegree)));
         float endY = (float) (centerY + radius * HOUR_NEEDLE_LENGTH_RATIO * Math.sin(Math.toRadians(hourDegree)));
         canvas.drawLine(centerX, centerY, endX, endY, needlePaint);
